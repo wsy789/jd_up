@@ -79,8 +79,7 @@ public class RecommendFragment extends BaseFragment<RecommendPresenter> implemen
         mRecyHome = (RecyclerView) view.findViewById(R.id.recyclerView);
         mRecyHome.setLayoutManager(new LinearLayoutManager(getActivity()));
         ArrayList<NewsBean.GoodsListItemBean> list1 = new ArrayList<>();
-        adapter = new RlvMultiRecVpAdapter(list1);
-//        mRecyHome.setAdapter(adapter);
+//        adapter = new RlvMultiRecVpAdapter(list1);
         adapter.bindToRecyclerView(mRecyHome);
     }
 
@@ -130,78 +129,7 @@ public class RecommendFragment extends BaseFragment<RecommendPresenter> implemen
                         drawable1.setColor(Color.parseColor("#ff00ff"));
                         customView.setBackground(drawable1);
                         break;
-                    case 1:
-                        GradientDrawable drawable = new GradientDrawable();
-                        drawable.setCornerRadius(50);
-                        drawable.setStroke(1, Color.parseColor("#ff00ff"));
-                        drawable.setColor(Color.parseColor("#00ff00"));
-                        customView.setBackground(drawable);
-                        break;
-                    case 2:
-//                        customView.setBackgroundResource(R.color.colorAccent);
-                        GradientDrawable drawable2 = new GradientDrawable();
-                        drawable2.setCornerRadius(50);
-                        drawable2.setStroke(1, Color.parseColor("#ff00ff"));
-                        drawable2.setColor(Color.parseColor("#008577"));
-                        customView.setBackground(drawable2);
-                        break;
-                    case 3:
-                        GradientDrawable drawable3 = new GradientDrawable();
-                        drawable3.setCornerRadius(50);
-                        drawable3.setStroke(1, Color.parseColor("#ff00ff"));
-                        drawable3.setColor(Color.parseColor("#FFEB3B"));
-                        customView.setBackground(drawable3);
-                        break;
-                    case 4:
-                        GradientDrawable drawable4 = new GradientDrawable();
-                        drawable4.setCornerRadius(50);
-                        drawable4.setStroke(1, Color.parseColor("#ff00ff"));
-                        drawable4.setColor(Color.parseColor("#D81B60"));
-                        customView.setBackground(drawable4);
-                        break;
-                    case 5:
-                        GradientDrawable drawable5 = new GradientDrawable();
-                        drawable5.setCornerRadius(50);
-                        drawable5.setStroke(1, Color.parseColor("#ff00ff"));
-                        drawable5.setColor(Color.parseColor("#03A9F4"));
-                        customView.setBackground(drawable5);
-                        break;
-                    case 6:
-                        GradientDrawable drawable6 = new GradientDrawable();
-                        drawable6.setCornerRadius(50);
-                        drawable6.setStroke(1, Color.parseColor("#ff00ff"));
-                        drawable6.setColor(Color.parseColor("#FF9800"));
-                        customView.setBackground(drawable6);
-                        break;
-                    case 7:
-                        GradientDrawable drawable7 = new GradientDrawable();
-                        drawable7.setCornerRadius(50);
-                        drawable7.setStroke(1, Color.parseColor("#ff00ff"));
-                        drawable7.setColor(Color.parseColor("#9C27B0"));
-                        customView.setBackground(drawable7);
-                        break;
-                    case 8:
-                        GradientDrawable drawable8 = new GradientDrawable();
-                        drawable8.setCornerRadius(50);
-                        drawable8.setStroke(1, Color.parseColor("#ff00ff"));
-                        drawable8.setColor(Color.parseColor("#2196F3"));
-                        customView.setBackground(drawable8);
-                        break;
-                }
-
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });*/
+          */
     }
 
     @Override
@@ -228,14 +156,12 @@ public class RecommendFragment extends BaseFragment<RecommendPresenter> implemen
 
             for (int i = 0; i < list.size(); i++) {
                 TextView textView = (TextView) LayoutInflater.from(getActivity()).inflate(R.layout.textitem, null);
-//            TextView textView = view.findViewById(R.id.my_tab_text);
                 textView.setGravity(Gravity.CENTER);
                 textView.setText(list.get(i).getName());
                 tabLayout.addTab(tabLayout.newTab().setCustomView(textView), i);
             }
             initListener();
             mPresenter.getRecommendList(colunmBean.getData().getList().get(0).getId());
-//            mPresenter.getDate();
         }
     }
 

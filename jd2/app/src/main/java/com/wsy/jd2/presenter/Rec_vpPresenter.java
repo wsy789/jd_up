@@ -1,8 +1,10 @@
-package com.wsy.jd2.ui.Recommend.rec_news;
+package com.wsy.jd2.presenter;
 
 import com.wsy.jd2.base.BasePresenter;
 import com.wsy.jd2.bean.NewsBean;
+import com.wsy.jd2.model.Rec_vpModel;
 import com.wsy.jd2.net.ResultCallBack;
+import com.wsy.jd2.ui.contract.Rec_vpContract;
 import com.wsy.jd2.ui.contract.RecommendContract;
 
 public class Rec_vpPresenter extends BasePresenter<Rec_vpContract.INewsView>implements RecommendContract.IRecommendPresenter {

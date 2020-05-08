@@ -39,7 +39,8 @@ public class MineFragment extends BaseFragment<MinePresenter> implements MineVie
 
     @Override
     protected int getLayout() {
-        return R.layout.fragment_mine;
+        return R.layout.fragment_login;
+//        return R.layout.fragment_register;
     }
 
 }

@@ -1,4 +1,4 @@
-package com.wsy.jd2.ui.Recommend.rec_news;
+package com.wsy.jd2.model;
 
 import android.util.Log;
 
@@ -7,6 +7,7 @@ import com.wsy.jd2.net.NetWorkFactory;
 import com.wsy.jd2.net.ParamsUtils;
 import com.wsy.jd2.net.ResultCallBack;
 import com.wsy.jd2.net.api.URLConstants;
+import com.wsy.jd2.ui.contract.Rec_vpContract;
 
 import java.util.HashMap;
 

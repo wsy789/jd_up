@@ -24,7 +24,6 @@ public class RecommendPresenter extends BasePresenter<RecommendView> {
     }
 
     public void getDate() {
-        Log.i("111", "getDate: P层");
         recommendModel.getColumList(new ResultCallBack<ColunmBean>() {
             @Override
             public void onSuccess(ColunmBean colunmBean) {

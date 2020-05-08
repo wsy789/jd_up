@@ -82,4 +82,7 @@ dependencies {
     implementation 'com.android.support:support-v4:29.0.0'
 //滚动文字
 //    implementation 'anylife.scrolltextview:ScrollTextviewLib:1.4.6'
+
+    //饺子视频
+    implementation 'cn.jzvd:jiaozivideoplayer:6.4.1'
 }

@@ -1,4 +1,4 @@
-package com.wsy.jd2.ui.Recommend.rec_news;
+package com.wsy.jd2.ui.contract;
 
 
 import com.wsy.jd2.base.BaseView;

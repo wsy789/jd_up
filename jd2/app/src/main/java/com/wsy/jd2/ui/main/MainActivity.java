@@ -11,7 +11,6 @@ import com.google.android.material.tabs.TabLayout;
 
 import com.wsy.jd2.R;
 import com.wsy.jd2.base.BaseActivity;
-import com.wsy.jd2.base.BaseApp;
 import com.wsy.jd2.base.BaseFragment;
 import com.wsy.jd2.presenter.MainPresenter;
 import com.wsy.jd2.ui.Recommend.RecommendFragment;

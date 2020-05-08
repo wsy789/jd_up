@@ -11,6 +11,7 @@ public class NewsBean {
         public static final int TYPE_Scroll= 1;//滚条
         public static final int TYPE_Lite = 2;//列表条目
         public static final int TYPE_BigPicture = 3;//大图
+        public static final int TYPE_BigVideo = 4;//大视频
 
         //其实最终data要存储的就是GoodsListBean
         //要在ui上面展示的数据
@@ -69,6 +70,8 @@ public class NewsBean {
     }
 
     public static class DataBean {
+        public static Object ArticleListBean;
+
         @Override
         public String toString() {
             return "DataBean{" +
