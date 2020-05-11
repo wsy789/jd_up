@@ -3,8 +3,16 @@ package com.wsy.jd2.ui.Recommend.rec_news;
 import android.content.Context;
 import android.net.Uri;
 import android.nfc.tech.NfcB;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
+import android.text.style.URLSpan;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.MediaController;
+import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
@@ -93,29 +101,53 @@ public class RlvMultiRecVpAdapter extends
 
     private void initVideoList(BaseViewHolder viewHolder, NewsBean.GoodsListItemBean item) {
         NewsBean.DataBean.ArticleListBean bean = (NewsBean.DataBean.ArticleListBean) item.data;
-
-  /*      viewHolder.jzvdStd.setUp(bean.getVideo_url(),
-                bean.getTheme(), Jzvd.SCREEN_WINDOW_NORMAL);//参数（播放视频，文章标题，应该是样式）
-   *//*     viewHolder.jzvdStd.positionInList = position;
-        Glide.with(context)
-                .load(bean.getImage_url())//缩略图/预览图
-                .into(viewHolder.jzvdStd.posterImageView);*//*
+        viewHolder.setText(R.id.list_video_theme, bean.getTheme());
+        viewHolder.setText(R.id.list_video_column_name, bean.getColumn_name());
+    /*    viewHolder.jzvdStd.setUp(bean.getVideo_url(),
+                bean.getTheme(), Jzvd.SCREEN_NORMAL);//参数（播放视频，文章标题，应该是样式）
         Glide.with(mContext)
                 .load(bean.getImage_url())
                 .into((ImageView) viewHolder.getView(R.id.list_video));*/
+   /*     viewHolder.jzvdStd.positionInList = position;
+        Glide.with(context)
+                .load(bean.getImage_url())//缩略图/预览图
+                .into(viewHolder.jzvdStd.posterImageView);*/
+
+        VideoView videoView = viewHolder.getView(R.id.list_video);
+        MediaController controller = new MediaController(mContext);
+        videoView.setMediaController(controller);
+        Uri uri = Uri.parse(bean.getVideo_url());//播放本地视频
+        videoView.setVideoURI(uri);
+        videoView.start();
     }
 
     private void initScroll(BaseViewHolder viewHolder, NewsBean.GoodsListItemBean item) {
-        NewsBean.DataBean bean = (NewsBean.DataBean) item.data;
-        List<NewsBean.DataBean.FlashListBean> flash_list = bean.getFlash_list();
+        NewsBean.DataBean.FlashListBean bean = (NewsBean.DataBean.FlashListBean) item.data;
+/*        List<NewsBean.DataBean.FlashListBean> flash_list = bean.getFlash_list();
 //        viewHolder.setText(R.id.recommend_scroll_tv,bean.getTheme());
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < flash_list.size(); i++) {
             builder.append(flash_list.get(i).getTheme() + "       ");
 //            theme = flash_list.get(i).getTheme();
         }
-        viewHolder.setText(R.id.recommend_scroll_tv, builder);
-
+        viewHolder.setText(R.id.recommend_scroll_tv, builder);*/
+        /**
+         * 跑马灯的内容都可以点击
+         * SpannableString：https://www.jianshu.com/p/472fd3e32324
+         */
+         //todo 跑马灯的内容都可以点击 未看效果-
+        SpannableString spannableString = new SpannableString(bean.getTheme());//内容
+        URLSpan urlSpan = new URLSpan(bean.getShare_link());//点击内容跳转方向
+       // spannableString.setSpan(urlSpan, 4, 7, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        /**
+         * what：对SpannableString进行润色的各种Span；
+         * int：需要润色文字段开始的下标；
+         * end：需要润色文字段结束的下标；
+         * flags：决定开始和结束下标是否包含的标志位，有四个参数可选
+         */
+        TextView mTextView = viewHolder.getView(R.id.recommend_scroll_tv);
+        mTextView.setMovementMethod(LinkMovementMethod.getInstance());
+        mTextView.setText(spannableString);
     }
 
     private void initBanner(BaseViewHolder viewHolder, NewsBean.GoodsListItemBean item) {

@@ -214,7 +214,7 @@ public class RetrofitUtils implements INetWork{
                         try {
                             String body = responseBody.string();
 
-                            LogUtils.e("TAG","网络请求GET方法打印："+body);
+                            LogUtils.e("TAG","网络请求post方法打印："+body);
 
                             Type[] genericInterfaces = netCallBack.getClass().getGenericInterfaces();
                             Type[] actualTypeArguments = ((ParameterizedType) genericInterfaces[0]).getActualTypeArguments();

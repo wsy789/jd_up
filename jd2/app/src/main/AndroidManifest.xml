@@ -13,13 +13,18 @@
         android:supportsRtl="true"
         android:hardwareAccelerated="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.main.MainActivity">
+
+        <activity android:name=".ui.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.login.AffirmRegisterActivity" />
+      <!--  <activity android:name=".ui.login.LoginActivity" />-->
+        <activity android:name=".ui.login.RegisterMSMCodeActivity" />
+
     </application>
 
 </manifest>

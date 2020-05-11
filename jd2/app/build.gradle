@@ -84,5 +84,5 @@ dependencies {
 //    implementation 'anylife.scrolltextview:ScrollTextviewLib:1.4.6'
 
     //饺子视频
-    implementation 'cn.jzvd:jiaozivideoplayer:6.4.1'
+    implementation 'cn.jzvd:jiaozivideoplayer:7.3.0'
 }

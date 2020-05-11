@@ -81,6 +81,8 @@ public class Rec_vpFragment extends BaseFragment<Rec_vpPresenter> implements Rec
             NewsBean.GoodsListItemBean itemBean = new NewsBean.GoodsListItemBean();
             if (articleListBean.getView_type()==2){
                 itemBean.itemType = NewsBean.GoodsListItemBean.TYPE_BigPicture;
+            } if (articleListBean.getView_type()==4){
+                itemBean.itemType = NewsBean.GoodsListItemBean.TYPE_BigVideo;
             }else if (articleListBean.getView_type()==5){
                 itemBean.itemType = NewsBean.GoodsListItemBean.TYPE_Scroll;
             }else {
